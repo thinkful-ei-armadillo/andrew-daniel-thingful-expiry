@@ -46,6 +46,11 @@ describe('Protected endpoints', function () {
             path: '/api/reviews',
             method: supertest(app).post,
         },
+        {
+            name: 'POST /api/auth/refresh',
+            path: '/api/auth/refresh',
+            method: supertest(app).post,
+          },
     ]
     protectedEndpoints.forEach(endpoint => {
         describe(endpoint.name, () => {

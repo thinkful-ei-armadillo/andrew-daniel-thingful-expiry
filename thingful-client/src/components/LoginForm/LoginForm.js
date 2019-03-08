@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Button, Input } from '../Utils/Utils'
-import TokenService from '../../services/token-service'
 import AuthApiService from '../../services/auth-api-service'
 
 export default class LoginForm extends Component {
@@ -27,7 +26,6 @@ export default class LoginForm extends Component {
       .then(res => {
         user_name.value = ''
         password.value = ''
-        TokenService.saveAuthToken(res.authToken)
         this.props.onLoginSuccess()
       })
       .catch(res => {
